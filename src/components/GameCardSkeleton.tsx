@@ -1,17 +1,19 @@
+import { Card, CardBody, Skeleton, SkeletonText } from '@chakra-ui/react'
 import React from 'react'
-import { Game } from '../hook/useGames';
-import { Card, CardBody, Heading, HStack, Image, Stack, Text } from '@chakra-ui/react';
-import PlatformIconList from './PlatformIconList';
-import Rating from './Rating';
-import getCroppedImageURl from '../services/image-url';
 
-interface Props {
-  game: Game;
+export default function GameCardSkeleton() {
+    return (
+        <Card width='250px'>
+            <Skeleton height='200px'/>
+            <CardBody>
+            <SkeletonText></SkeletonText>
+            </CardBody>
+            
+        </Card>
+    )
 }
-export default function GameCard({ game }: Props) {
-  return (
-    <>
-      <Card width = '250px' key={game.id} maxW='sm'>
+
+{/* <Card key={game.id} maxW='sm'>
         <Image
           src={getCroppedImageURl(game.background_image)}
           alt={game.name}
@@ -25,6 +27,4 @@ export default function GameCard({ game }: Props) {
           </HStack>
         </CardBody>
       </Card>
-    </>
-  )
-}
+    </> */}
